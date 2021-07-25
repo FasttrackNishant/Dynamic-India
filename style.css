@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 100vh;
+    width: 100%;
+    font-family: 'Rubik', sans-serif;
+    background-image: linear-gradient(to left, #fff 85%, #c3f5ff 20%);
+}
+
+.navbar {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to top, #fff 80%, #c3f5ff 20%);
+}
+
+.list {
+    width: 60%;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.list a {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 17px;
+    color: black;
+}
+
+.brandname {
+    width: 40%;
+    color: #fff;
+    background-image: linear-gradient(#8d98e3 40%, #854fee 60%);
+    padding-left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+}
+
+.brandname h1 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    animation: frontback 2s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes frontback {
+    from {
+        padding-left: 90px;
+    }
+    to {
+        padding-right: 80px;
+    }
+}
+
+nav a:first-child {
+    color: blue;
+}
+
+nav a:before {
+    content: "";
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-bottom: 3px solid black;
+    transition: all 0.4s linear;
+}
+
+nav a:hover:before {
+    width: 100%;
+}
+
+main {
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rightside {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background-color: #109c1050;
+}
+
+.rightside img {
+    max-width: 640px;
+    height: auto;
+}
+
+.leftside {
+    font-size: 35px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.leftside h3:after {
+    content: "";
+    width: 130px;
+    height: 3px;
+    position: absolute;
+    top: 16%;
+    left: 25%;
+    background-color: black;
+    border-radius: 43px;
+}
+
+.leftside h3 {
+    margin-bottom: 10px;
+    font-size: 31px;
+    font-weight: bold;
+}
+
+.leftside h2 {
+    margin: 10px 0;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.glow-on-hover {
+    width: 133px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
